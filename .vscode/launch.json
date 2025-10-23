@@ -12,8 +12,39 @@
             "configFiles": [
                 "interface/stlink-v2.cfg",
                 "target/stm32f1x.cfg"
-            ],
-            "svdFile": ".pack/Keil/STM32F1xx_DFP.2.4.0/SVD/STM32F103xx.svd"
+            ]
+        },
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Cortex Debug (STM32)",
+            "servertype": "openocd",
+            "device": "${input:deviceName}",
+            "executable": "${workspaceFolder}/${input:executablePath}",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build",
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "executablePath",
+            "description": "Path to ELF file to debug (relative to workspace folder)"
+        },
+        {
+            "type": "pickString",
+            "id": "serverType",
+            "description": "Select GDB server type to use for target",
+            "options": [
+                "stlink",
+                "openocd",
+                "jlink"
+            ]
+        },
+        {
+            "type": "promptString",
+            "id": "deviceName",
+            "description": "Target device name (e.g. STM32F103xx)"
         }
     ]
 }

@@ -185,7 +185,13 @@ void sys_init(void)
     send_at_command("AT+CK00\r\n", 50);          // 关闭 -- 不自动切换至蓝牙
     send_at_command("AT+B200\r\n", 50);          // 关闭蓝牙通话功能
     send_at_command("AT+CR00\r\n", 50);          // 关闭自动回传功能
-    send_at_command("AT+CP01\r\n", 50);          // 上电进入等待状态，需要用户发送模式指令
+#ifdef TYPE_PILLOW_NORMAL
+    send_at_command("AT+CP01\r\n", 50);   // 上电进入等待状态，需要用户发送模式指令
+#endif
+#ifdef TYPE_PILLOW_U
+    send_at_command("AT+CP00\r\n", 50);   // 上电进入可连接状态
+    send_at_command("AT+CM01\r\n", 50);
+#endif
 }
 int main(void)
 {

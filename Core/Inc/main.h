@@ -23,8 +23,7 @@
 #define __MAIN_H
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
@@ -33,25 +32,26 @@ extern "C"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdbool.h"
-    /* USER CODE END Includes */
+/* USER CODE END Includes */
 
-    /* Exported types ------------------------------------------------------------*/
-    /* USER CODE BEGIN ET */
+/* Exported types ------------------------------------------------------------*/
+/* USER CODE BEGIN ET */
+#define TYPE_PILLOW_U
+// #define TYPE_PILLOW_NORMAL
+/* USER CODE END ET */
 
-    /* USER CODE END ET */
+/* Exported constants --------------------------------------------------------*/
+/* USER CODE BEGIN EC */
 
-    /* Exported constants --------------------------------------------------------*/
-    /* USER CODE BEGIN EC */
+/* USER CODE END EC */
 
-    /* USER CODE END EC */
+/* Exported macro ------------------------------------------------------------*/
+/* USER CODE BEGIN EM */
 
-    /* Exported macro ------------------------------------------------------------*/
-    /* USER CODE BEGIN EM */
+/* USER CODE END EM */
 
-    /* USER CODE END EM */
-
-    /* Exported functions prototypes ---------------------------------------------*/
-    void Error_Handler(void);
+/* Exported functions prototypes ---------------------------------------------*/
+void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 
@@ -83,9 +83,9 @@ extern "C"
 #define LED_B_Pin GPIO_PIN_12
 #define LED_B_GPIO_Port GPIOA
 
-    /* USER CODE BEGIN Private defines */
-    void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
-    /* USER CODE END Private defines */
+/* USER CODE BEGIN Private defines */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim);
+/* USER CODE END Private defines */
 
 #ifdef __cplusplus
 }
