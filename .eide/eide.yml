@@ -300,7 +300,7 @@ targets:
         interface: stlink-v2
         target: stm32f1x
       STLink:
-        address: "0x08000000"
+        address: "0x0"
         bin: ""
         elFile: None
         optionBytes: .eide/lunar.st.option.bytes.ini
