@@ -36,8 +36,10 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+
 #define TYPE_PILLOW_U
 // #define TYPE_PILLOW_NORMAL
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

@@ -30,19 +30,6 @@ extern Alarm_struct alarms[MAX_ALARMS];
 static uint8_t _Buffer[BUFFER_SIZE];
 static uint16_t _BufferLen = 0;
 
-// 辅助函数：将16位整数转换为两个字节
-static inline void _from_uint16(uint16_t value, uint8_t* bytes)
-{
-    bytes[0] = (uint8_t)(value >> 8);
-    bytes[1] = (uint8_t)(value & 0xFF);
-}
-
-// 辅助函数：将两个字节转换为16位整数
-static inline uint16_t _to_uint16(const uint8_t* bytes)
-{
-    return (uint16_t)(bytes[0] << 8) | bytes[1];
-}
-
 // 发送数据包到蓝牙设备，自动分包处理
 static void Bluetooth_Send_Packet(const uint8_t* data, uint16_t length)
 {
@@ -171,7 +158,6 @@ static void _do_write_reg_cmd(uint16_t addr, const uint8_t data[], uint8_t num)
     _send_cmd(CMD_WRITE_REGISTER, resp_data, 4);
 }
 
-// 解析接收到的数据帧
 // 解析接收到的数据帧
 static bool _decode()
 {

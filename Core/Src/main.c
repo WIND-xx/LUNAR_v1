@@ -189,7 +189,8 @@ void sys_init(void)
     send_at_command("AT+CP01\r\n", 50);   // 上电进入等待状态，需要用户发送模式指令
 #endif
 #ifdef TYPE_PILLOW_U
-    mode_control(BLUETOOTH_MODE);   // 上电直接进入蓝牙模式
+    send_at_command("AT+CN00\r\n", 50);   // 关闭提示音
+    mode_control(BLUETOOTH_MODE);         // 上电直接进入蓝牙模式
 #endif
 }
 int main(void)

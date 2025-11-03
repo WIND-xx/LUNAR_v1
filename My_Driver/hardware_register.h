@@ -9,11 +9,11 @@
 #define MUSIC_ID_DEFAULT 0
 
 uint32_t get_remaining_seconds(void);
-void     set_remaining_seconds(uint32_t seconds);
-void     set_heating_active(bool active);
-bool     is_heating_active(void);
-void     set_music_active(bool active);
-bool     is_music_active(void);
+void set_remaining_seconds(uint32_t seconds);
+void set_heating_active(bool active);
+bool is_heating_active(void);
+void set_music_active(bool active);
+bool is_music_active(void);
 
 bool tick_timeout(uint32_t start, uint32_t timeout);
 
@@ -28,7 +28,7 @@ void stop_music_task(void);
 
 bool send_at_command(const char* cmd, uint32_t timeout_ms);
 
-int     query_ble_status(void);
+int query_ble_status(void);
 uint8_t query_ble_cm(void);
 uint8_t query_music_id(void);
 
